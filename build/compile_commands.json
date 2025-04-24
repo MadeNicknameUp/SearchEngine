@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/xrd/Projects/SkillboxProjects/SearchEngine/build",
+  "command": "/usr/bin/c++  -I/home/xrd/Projects/SkillboxProjects/SearchEngine/include -I/home/xrd/Projects/SkillboxProjects/SearchEngine/extern/json/include  -o CMakeFiles/SearchEngine.dir/src/ConverterJSON.cpp.o -c /home/xrd/Projects/SkillboxProjects/SearchEngine/src/ConverterJSON.cpp",
+  "file": "/home/xrd/Projects/SkillboxProjects/SearchEngine/src/ConverterJSON.cpp",
+  "output": "CMakeFiles/SearchEngine.dir/src/ConverterJSON.cpp.o"
+}
+]

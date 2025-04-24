@@ -1,0 +1,5 @@
+/home/xrd/Projects/SkillboxProjects/SearchEngine/build/CMakeFiles/SearchEngine.dir
+/home/xrd/Projects/SkillboxProjects/SearchEngine/build/CMakeFiles/edit_cache.dir
+/home/xrd/Projects/SkillboxProjects/SearchEngine/build/CMakeFiles/rebuild_cache.dir
+/home/xrd/Projects/SkillboxProjects/SearchEngine/build/extern/json/CMakeFiles/edit_cache.dir
+/home/xrd/Projects/SkillboxProjects/SearchEngine/build/extern/json/CMakeFiles/rebuild_cache.dir
