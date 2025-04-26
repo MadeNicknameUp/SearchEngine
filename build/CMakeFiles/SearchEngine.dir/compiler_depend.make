@@ -358,6 +358,11 @@ CMakeFiles/SearchEngine.dir/src/ConverterJSON.cpp.o: /home/xrd/Projects/Skillbox
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h
 
+CMakeFiles/SearchEngine.dir/src/main.cpp.o: /home/xrd/Projects/SkillboxProjects/SearchEngine/src/main.cpp \
+  /usr/include/stdc-predef.h
+
+
+/home/xrd/Projects/SkillboxProjects/SearchEngine/src/main.cpp:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h:
 

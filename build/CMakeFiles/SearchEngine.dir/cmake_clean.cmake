@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/SearchEngine.dir/src/ConverterJSON.cpp.o"
   "CMakeFiles/SearchEngine.dir/src/ConverterJSON.cpp.o.d"
+  "CMakeFiles/SearchEngine.dir/src/main.cpp.o"
+  "CMakeFiles/SearchEngine.dir/src/main.cpp.o.d"
   "SearchEngine"
   "SearchEngine.pdb"
 )

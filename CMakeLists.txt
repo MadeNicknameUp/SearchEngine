@@ -5,41 +5,53 @@ set(JSON_BuildTests OFF CACHE INTERNAL "")
 set(JSON_Install OFF CACHE INTERNAL "")
 
 add_subdirectory(extern/json)
-
-if (TARGET nlohmann_json::nlohmann_json)
-    message(STATUS "nlohmann/json found in submodule")
-else()
+if (NOT TARGET nlohmann_json::nlohmann_json)
     message(FATAL_ERROR "nlohmann/json not found!")
 endif()
 
-set(SOURCES
+set(MAIN_SOURCES
+    src/main.cpp
     src/ConverterJSON.cpp
-)
-
-set(HEADERS
     include/ConverterJSON.h
 )
 
-# Копируем JSON-файлы в папку сборки (build/)
-configure_file(
-    ${CMAKE_SOURCE_DIR}/requests.json
-    ${CMAKE_BINARY_DIR}/requests.json
-    COPYONLY
+set(TEST_SOURCES
+    tests/test_converter.cpp
+    src/ConverterJSON.cpp
+    include/ConverterJSON.h
 )
 
-configure_file(
-    ${CMAKE_SOURCE_DIR}/config.json
-    ${CMAKE_BINARY_DIR}/config.json
-    COPYONLY
-)
+configure_file(${CMAKE_SOURCE_DIR}/requests.json ${CMAKE_BINARY_DIR}/requests.json COPYONLY)
+configure_file(${CMAKE_SOURCE_DIR}/config.json ${CMAKE_BINARY_DIR}/config.json COPYONLY)
+configure_file(${CMAKE_SOURCE_DIR}/answers.json ${CMAKE_BINARY_DIR}/answers.json COPYONLY)
 
-configure_file(
-    ${CMAKE_SOURCE_DIR}/answers.json
-    ${CMAKE_BINARY_DIR}/answers.json
-    COPYONLY
-)
-
-add_executable(SearchEngine ${SOURCES} ${HEADERS})
-
+add_executable(SearchEngine ${MAIN_SOURCES})
 target_include_directories(SearchEngine PRIVATE include)
 target_link_libraries(SearchEngine PRIVATE nlohmann_json::nlohmann_json)
+
+# ===== Google Test =====
+if(EXISTS ${CMAKE_SOURCE_DIR}/extern/googletest/CMakeLists.txt)
+    message(STATUS "Found Google Test submodule")
+    add_subdirectory(extern/googletest)
+
+    if(TARGET gtest AND TARGET gtest_main)
+        message(STATUS "Google Test targets available")
+
+        add_executable(tests ${TEST_SOURCES})
+
+        target_link_libraries(tests
+            PRIVATE
+            gtest_main
+            nlohmann_json::nlohmann_json
+        )
+
+        target_include_directories(tests PRIVATE include)
+
+        enable_testing()
+        add_test(NAME AllTests COMMAND tests)
+    else()
+        message(WARNING "Google Test targets not found")
+    endif()
+else()
+    message(WARNING "Google Test submodule not found at extern/googletest")
+endif()

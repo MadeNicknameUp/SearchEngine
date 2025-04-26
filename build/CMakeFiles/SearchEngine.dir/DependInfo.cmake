@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/xrd/Projects/SkillboxProjects/SearchEngine/src/ConverterJSON.cpp" "CMakeFiles/SearchEngine.dir/src/ConverterJSON.cpp.o" "gcc" "CMakeFiles/SearchEngine.dir/src/ConverterJSON.cpp.o.d"
+  "/home/xrd/Projects/SkillboxProjects/SearchEngine/src/main.cpp" "CMakeFiles/SearchEngine.dir/src/main.cpp.o" "gcc" "CMakeFiles/SearchEngine.dir/src/main.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

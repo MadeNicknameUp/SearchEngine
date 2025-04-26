@@ -64,17 +64,73 @@ CMAKE_BINARY_DIR = /home/xrd/Projects/SkillboxProjects/SearchEngine/build
 
 # The main recursive "all" target.
 all: CMakeFiles/SearchEngine.dir/all
+all: CMakeFiles/tests.dir/all
 all: extern/json/all
+all: extern/googletest/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: extern/json/preinstall
+preinstall: extern/googletest/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/SearchEngine.dir/clean
+clean: CMakeFiles/tests.dir/clean
 clean: extern/json/clean
+clean: extern/googletest/clean
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory extern/googletest
+
+# Recursive "all" directory target.
+extern/googletest/all: extern/googletest/googlemock/all
+.PHONY : extern/googletest/all
+
+# Recursive "preinstall" directory target.
+extern/googletest/preinstall: extern/googletest/googlemock/preinstall
+.PHONY : extern/googletest/preinstall
+
+# Recursive "clean" directory target.
+extern/googletest/clean: extern/googletest/googlemock/clean
+.PHONY : extern/googletest/clean
+
+#=============================================================================
+# Directory level rules for directory extern/googletest/googlemock
+
+# Recursive "all" directory target.
+extern/googletest/googlemock/all: extern/googletest/googlemock/CMakeFiles/gmock.dir/all
+extern/googletest/googlemock/all: extern/googletest/googlemock/CMakeFiles/gmock_main.dir/all
+extern/googletest/googlemock/all: extern/googletest/googletest/all
+.PHONY : extern/googletest/googlemock/all
+
+# Recursive "preinstall" directory target.
+extern/googletest/googlemock/preinstall: extern/googletest/googletest/preinstall
+.PHONY : extern/googletest/googlemock/preinstall
+
+# Recursive "clean" directory target.
+extern/googletest/googlemock/clean: extern/googletest/googlemock/CMakeFiles/gmock.dir/clean
+extern/googletest/googlemock/clean: extern/googletest/googlemock/CMakeFiles/gmock_main.dir/clean
+extern/googletest/googlemock/clean: extern/googletest/googletest/clean
+.PHONY : extern/googletest/googlemock/clean
+
+#=============================================================================
+# Directory level rules for directory extern/googletest/googletest
+
+# Recursive "all" directory target.
+extern/googletest/googletest/all: extern/googletest/googletest/CMakeFiles/gtest.dir/all
+extern/googletest/googletest/all: extern/googletest/googletest/CMakeFiles/gtest_main.dir/all
+.PHONY : extern/googletest/googletest/all
+
+# Recursive "preinstall" directory target.
+extern/googletest/googletest/preinstall:
+.PHONY : extern/googletest/googletest/preinstall
+
+# Recursive "clean" directory target.
+extern/googletest/googletest/clean: extern/googletest/googletest/CMakeFiles/gtest.dir/clean
+extern/googletest/googletest/clean: extern/googletest/googletest/CMakeFiles/gtest_main.dir/clean
+.PHONY : extern/googletest/googletest/clean
 
 #=============================================================================
 # Directory level rules for directory extern/json
@@ -98,12 +154,12 @@ extern/json/clean:
 CMakeFiles/SearchEngine.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngine.dir/build.make CMakeFiles/SearchEngine.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngine.dir/build.make CMakeFiles/SearchEngine.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xrd/Projects/SkillboxProjects/SearchEngine/build/CMakeFiles --progress-num=1,2 "Built target SearchEngine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xrd/Projects/SkillboxProjects/SearchEngine/build/CMakeFiles --progress-num=1,2,3 "Built target SearchEngine"
 .PHONY : CMakeFiles/SearchEngine.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/SearchEngine.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xrd/Projects/SkillboxProjects/SearchEngine/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xrd/Projects/SkillboxProjects/SearchEngine/build/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/SearchEngine.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/xrd/Projects/SkillboxProjects/SearchEngine/build/CMakeFiles 0
 .PHONY : CMakeFiles/SearchEngine.dir/rule
@@ -116,6 +172,138 @@ SearchEngine: CMakeFiles/SearchEngine.dir/rule
 CMakeFiles/SearchEngine.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngine.dir/build.make CMakeFiles/SearchEngine.dir/clean
 .PHONY : CMakeFiles/SearchEngine.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/tests.dir
+
+# All Build rule for target.
+CMakeFiles/tests.dir/all: extern/googletest/googletest/CMakeFiles/gtest.dir/all
+CMakeFiles/tests.dir/all: extern/googletest/googletest/CMakeFiles/gtest_main.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xrd/Projects/SkillboxProjects/SearchEngine/build/CMakeFiles --progress-num=12,13,14 "Built target tests"
+.PHONY : CMakeFiles/tests.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xrd/Projects/SkillboxProjects/SearchEngine/build/CMakeFiles 7
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xrd/Projects/SkillboxProjects/SearchEngine/build/CMakeFiles 0
+.PHONY : CMakeFiles/tests.dir/rule
+
+# Convenience name for target.
+tests: CMakeFiles/tests.dir/rule
+.PHONY : tests
+
+# clean rule for target.
+CMakeFiles/tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/clean
+.PHONY : CMakeFiles/tests.dir/clean
+
+#=============================================================================
+# Target rules for target extern/googletest/googlemock/CMakeFiles/gmock.dir
+
+# All Build rule for target.
+extern/googletest/googlemock/CMakeFiles/gmock.dir/all: extern/googletest/googletest/CMakeFiles/gtest.dir/all
+	$(MAKE) $(MAKESILENT) -f extern/googletest/googlemock/CMakeFiles/gmock.dir/build.make extern/googletest/googlemock/CMakeFiles/gmock.dir/depend
+	$(MAKE) $(MAKESILENT) -f extern/googletest/googlemock/CMakeFiles/gmock.dir/build.make extern/googletest/googlemock/CMakeFiles/gmock.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xrd/Projects/SkillboxProjects/SearchEngine/build/CMakeFiles --progress-num=4,5 "Built target gmock"
+.PHONY : extern/googletest/googlemock/CMakeFiles/gmock.dir/all
+
+# Build rule for subdir invocation for target.
+extern/googletest/googlemock/CMakeFiles/gmock.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xrd/Projects/SkillboxProjects/SearchEngine/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 extern/googletest/googlemock/CMakeFiles/gmock.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xrd/Projects/SkillboxProjects/SearchEngine/build/CMakeFiles 0
+.PHONY : extern/googletest/googlemock/CMakeFiles/gmock.dir/rule
+
+# Convenience name for target.
+gmock: extern/googletest/googlemock/CMakeFiles/gmock.dir/rule
+.PHONY : gmock
+
+# clean rule for target.
+extern/googletest/googlemock/CMakeFiles/gmock.dir/clean:
+	$(MAKE) $(MAKESILENT) -f extern/googletest/googlemock/CMakeFiles/gmock.dir/build.make extern/googletest/googlemock/CMakeFiles/gmock.dir/clean
+.PHONY : extern/googletest/googlemock/CMakeFiles/gmock.dir/clean
+
+#=============================================================================
+# Target rules for target extern/googletest/googlemock/CMakeFiles/gmock_main.dir
+
+# All Build rule for target.
+extern/googletest/googlemock/CMakeFiles/gmock_main.dir/all: extern/googletest/googlemock/CMakeFiles/gmock.dir/all
+extern/googletest/googlemock/CMakeFiles/gmock_main.dir/all: extern/googletest/googletest/CMakeFiles/gtest.dir/all
+	$(MAKE) $(MAKESILENT) -f extern/googletest/googlemock/CMakeFiles/gmock_main.dir/build.make extern/googletest/googlemock/CMakeFiles/gmock_main.dir/depend
+	$(MAKE) $(MAKESILENT) -f extern/googletest/googlemock/CMakeFiles/gmock_main.dir/build.make extern/googletest/googlemock/CMakeFiles/gmock_main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xrd/Projects/SkillboxProjects/SearchEngine/build/CMakeFiles --progress-num=6,7 "Built target gmock_main"
+.PHONY : extern/googletest/googlemock/CMakeFiles/gmock_main.dir/all
+
+# Build rule for subdir invocation for target.
+extern/googletest/googlemock/CMakeFiles/gmock_main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xrd/Projects/SkillboxProjects/SearchEngine/build/CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 extern/googletest/googlemock/CMakeFiles/gmock_main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xrd/Projects/SkillboxProjects/SearchEngine/build/CMakeFiles 0
+.PHONY : extern/googletest/googlemock/CMakeFiles/gmock_main.dir/rule
+
+# Convenience name for target.
+gmock_main: extern/googletest/googlemock/CMakeFiles/gmock_main.dir/rule
+.PHONY : gmock_main
+
+# clean rule for target.
+extern/googletest/googlemock/CMakeFiles/gmock_main.dir/clean:
+	$(MAKE) $(MAKESILENT) -f extern/googletest/googlemock/CMakeFiles/gmock_main.dir/build.make extern/googletest/googlemock/CMakeFiles/gmock_main.dir/clean
+.PHONY : extern/googletest/googlemock/CMakeFiles/gmock_main.dir/clean
+
+#=============================================================================
+# Target rules for target extern/googletest/googletest/CMakeFiles/gtest.dir
+
+# All Build rule for target.
+extern/googletest/googletest/CMakeFiles/gtest.dir/all:
+	$(MAKE) $(MAKESILENT) -f extern/googletest/googletest/CMakeFiles/gtest.dir/build.make extern/googletest/googletest/CMakeFiles/gtest.dir/depend
+	$(MAKE) $(MAKESILENT) -f extern/googletest/googletest/CMakeFiles/gtest.dir/build.make extern/googletest/googletest/CMakeFiles/gtest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xrd/Projects/SkillboxProjects/SearchEngine/build/CMakeFiles --progress-num=8,9 "Built target gtest"
+.PHONY : extern/googletest/googletest/CMakeFiles/gtest.dir/all
+
+# Build rule for subdir invocation for target.
+extern/googletest/googletest/CMakeFiles/gtest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xrd/Projects/SkillboxProjects/SearchEngine/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 extern/googletest/googletest/CMakeFiles/gtest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xrd/Projects/SkillboxProjects/SearchEngine/build/CMakeFiles 0
+.PHONY : extern/googletest/googletest/CMakeFiles/gtest.dir/rule
+
+# Convenience name for target.
+gtest: extern/googletest/googletest/CMakeFiles/gtest.dir/rule
+.PHONY : gtest
+
+# clean rule for target.
+extern/googletest/googletest/CMakeFiles/gtest.dir/clean:
+	$(MAKE) $(MAKESILENT) -f extern/googletest/googletest/CMakeFiles/gtest.dir/build.make extern/googletest/googletest/CMakeFiles/gtest.dir/clean
+.PHONY : extern/googletest/googletest/CMakeFiles/gtest.dir/clean
+
+#=============================================================================
+# Target rules for target extern/googletest/googletest/CMakeFiles/gtest_main.dir
+
+# All Build rule for target.
+extern/googletest/googletest/CMakeFiles/gtest_main.dir/all: extern/googletest/googletest/CMakeFiles/gtest.dir/all
+	$(MAKE) $(MAKESILENT) -f extern/googletest/googletest/CMakeFiles/gtest_main.dir/build.make extern/googletest/googletest/CMakeFiles/gtest_main.dir/depend
+	$(MAKE) $(MAKESILENT) -f extern/googletest/googletest/CMakeFiles/gtest_main.dir/build.make extern/googletest/googletest/CMakeFiles/gtest_main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xrd/Projects/SkillboxProjects/SearchEngine/build/CMakeFiles --progress-num=10,11 "Built target gtest_main"
+.PHONY : extern/googletest/googletest/CMakeFiles/gtest_main.dir/all
+
+# Build rule for subdir invocation for target.
+extern/googletest/googletest/CMakeFiles/gtest_main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xrd/Projects/SkillboxProjects/SearchEngine/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 extern/googletest/googletest/CMakeFiles/gtest_main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xrd/Projects/SkillboxProjects/SearchEngine/build/CMakeFiles 0
+.PHONY : extern/googletest/googletest/CMakeFiles/gtest_main.dir/rule
+
+# Convenience name for target.
+gtest_main: extern/googletest/googletest/CMakeFiles/gtest_main.dir/rule
+.PHONY : gtest_main
+
+# clean rule for target.
+extern/googletest/googletest/CMakeFiles/gtest_main.dir/clean:
+	$(MAKE) $(MAKESILENT) -f extern/googletest/googletest/CMakeFiles/gtest_main.dir/build.make extern/googletest/googletest/CMakeFiles/gtest_main.dir/clean
+.PHONY : extern/googletest/googletest/CMakeFiles/gtest_main.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
