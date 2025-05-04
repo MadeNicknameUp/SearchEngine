@@ -9,19 +9,25 @@ if (NOT TARGET nlohmann_json::nlohmann_json)
     message(FATAL_ERROR "nlohmann/json not found!")
 endif()
 
-# Основные исходники
 set(MAIN_SOURCES
     src/main.cpp
     src/ConverterJSON.cpp
     src/InvertedIndex.cpp
     src/SearchServer.cpp
+
+    include/ConverterJSON.h
+    include/InvertedIndex.h
+    include/SearchServer.h
 )
 
-# Тесты
 set(TEST_SOURCES
-    tests/test_converter.cpp
-    tests/test_invertedindex.cpp
-    tests/test_searchserver.cpp
+    tests/test_ConverterJSON.cpp
+    tests/test_InvertedIndex.cpp
+    tests/test_SearchServer.cpp
+
+    src/ConverterJSON.cpp
+    src/InvertedIndex.cpp
+    src/SearchServer.cpp
 )
 
 configure_file(${CMAKE_SOURCE_DIR}/requests.json ${CMAKE_BINARY_DIR}/requests.json COPYONLY)

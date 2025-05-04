@@ -1,6 +1,8 @@
 #ifndef INVERTEDINDEX_H
 #define INVERTEDINDEX_H
 
+#include "ConverterJSON.h"
+
 #include <unordered_map>
 #include <mutex>
 #include <string>
@@ -17,6 +19,7 @@ private:
 
     std::unordered_map<std::string, std::unordered_map<size_t, size_t>> freq_dictionary;
     std::mutex dict_mutex;
+    ConverterJSON converter;
 };
 
 #endif // INVERTEDINDEX_H

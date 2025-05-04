@@ -1,12 +1,14 @@
 #include "InvertedIndex.h"
-#include "ConverterJSON.h"
 
 #include <fstream>
 #include <thread>
 #include <vector>
 
 void InvertedIndex::UpdateDocumentBase() {
-    ConverterJSON converter;
+    {
+        std::lock_guard<std::mutex> lock(dict_mutex);
+        freq_dictionary.clear();
+    }
 
     std::vector<std::string> files_paths;
     std::vector<std::thread> threads;
