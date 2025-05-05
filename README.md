@@ -31,12 +31,9 @@ SearchEngine/
 │ ├── test_ConverterJSON.cpp
 │ ├── test_InvertedIndex.cpp
 │ └── test_SearchServer.cpp
-├── extern/
-│ ├── json/
-│ └── googletest/
-├── requests.json
-├── config.json
-└── answers.json
+└── extern/
+    ├── json/
+    └── googletest/
 ```
 
 ## Features
@@ -76,9 +73,7 @@ cmake --build .
 
 4. Run tests:
 ```bash
-make test
-# or
-ctest
+./tests
 ```
 
 ## Configuration
