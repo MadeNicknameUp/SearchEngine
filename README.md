@@ -30,7 +30,8 @@ SearchEngine/
 ├── tests/
 │ ├── test_ConverterJSON.cpp
 │ ├── test_InvertedIndex.cpp
-│ └── test_SearchServer.cpp
+│ ├── test_SearchServer.cpp
+│ └── other_tests.cpp
 └── extern/
     ├── json/
     └── googletest/
