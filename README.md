@@ -114,9 +114,10 @@ Example config.json:
 ```bash
 {
   "requests": [
-    "first query",
-    "second query",
-    "third query"
+    "some word",
+    "some",
+    "word",
+    "nonsense"
   ]
 }
 ```
