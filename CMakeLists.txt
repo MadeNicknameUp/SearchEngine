@@ -24,6 +24,7 @@ set(MAIN_SOURCES
     src/ConverterJSON.cpp
     src/InvertedIndex.cpp
     src/SearchServer.cpp
+
     include/ConverterJSON.h
     include/InvertedIndex.h
     include/SearchServer.h
@@ -51,6 +52,8 @@ set(TEST_SOURCES
     tests/test_ConverterJSON.cpp
     tests/test_InvertedIndex.cpp
     tests/test_SearchServer.cpp
+    tests/other_tests.cpp
+
     src/ConverterJSON.cpp
     src/InvertedIndex.cpp
     src/SearchServer.cpp
