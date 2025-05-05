@@ -78,11 +78,6 @@ vector<string> ConverterJSON::GetTextDocuments() const {
     return config_cache["files"].get<vector<string>>();
 }
 
-int ConverterJSON::GetResponsesLimit() const {
-    loadConfig();
-    return config_cache["config"]["max_responses"].get<int>();
-}
-
 vector<string> ConverterJSON::GetRequests() const {
     loadRequests();
 

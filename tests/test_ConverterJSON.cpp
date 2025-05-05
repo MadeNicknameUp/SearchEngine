@@ -84,10 +84,6 @@ TEST_F(ConverterJSONTest, GetRequestsReturnsCorrectRequests) {
     EXPECT_EQ(requests[3], "nonsense");
 }
 
-TEST_F(ConverterJSONTest, GetResponsesLimitReturnsCorrectValue) {
-    EXPECT_EQ(converter.GetResponsesLimit(), 5);
-}
-
 TEST_F(ConverterJSONTest, GetRequestsReturnsEmptyVectorWhenNoRequestsFile) {
     fs::remove("requests.json");
     auto requests = converter.GetRequests();
@@ -128,19 +124,16 @@ TEST_F(ConverterJSONTest, PutAnswersCreatesValidJsonFile) {
 TEST_F(ConverterJSONTest, ThrowsWhenConfigFileMissing) {
     fs::remove("config.json");
     EXPECT_THROW(converter.GetTextDocuments(), std::runtime_error);
-    EXPECT_THROW(converter.GetResponsesLimit(), std::runtime_error);
 }
 
 TEST_F(ConverterJSONTest, ThrowsWhenConfigFileEmpty) {
     createEmptyConfig();
     EXPECT_THROW(converter.GetTextDocuments(), std::runtime_error);
-    EXPECT_THROW(converter.GetResponsesLimit(), std::runtime_error);
 }
 
 TEST_F(ConverterJSONTest, ThrowsWhenConfigFileInvalid) {
     createInvalidConfig();
     EXPECT_THROW(converter.GetTextDocuments(), std::runtime_error);
-    EXPECT_THROW(converter.GetResponsesLimit(), std::runtime_error);
 }
 
 TEST_F(ConverterJSONTest, ThrowsWhenConfigMissingRequiredSections) {
@@ -149,7 +142,6 @@ TEST_F(ConverterJSONTest, ThrowsWhenConfigMissingRequiredSections) {
     config.close();
 
     EXPECT_THROW(converter.GetTextDocuments(), std::runtime_error);
-    EXPECT_THROW(converter.GetResponsesLimit(), std::runtime_error);
 }
 
 TEST_F(ConverterJSONTest, PutAnswersHandlesEmptyInput) {

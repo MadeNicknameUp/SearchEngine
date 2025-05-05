@@ -9,7 +9,6 @@
 class ConverterJSON {
 public:
     std::vector<std::string> GetTextDocuments() const;
-    int GetResponsesLimit() const;
 
     std::vector<std::string> GetRequests() const;
 

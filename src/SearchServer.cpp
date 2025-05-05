@@ -57,8 +57,8 @@ std::vector<size_t> SearchServer::findMatchingDocs(const std::vector<std::string
 
     std::unordered_set<size_t> result;
 
-    for (size_t i = 0; i < words.size(); ++i) {
-        const auto& word_counts = _index.GetWordCount(words[i]);
+    for (const auto& word : words) {
+        const auto& word_counts = _index.GetWordCount(word);
         for (const auto& [doc_id, count] : word_counts) {
             result.insert(doc_id);
         }
